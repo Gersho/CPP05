@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/03 17:17:04 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/04 12:38:51 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main()
 {
 	Bureaucrat a("Hermes Conrad", 3);
-	Bureaucrat b("Morgan Proctor", 149);
+	Bureaucrat b("Morgan Proctor", 148);
 
 	std::cout << a << std::endl;
 	a.promote();
