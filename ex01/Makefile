@@ -4,16 +4,14 @@ OBJS			= $(SRCS:.cpp=.o)
 
 DEPS			= $(SRCS:.cpp=.d)
 
-NAME			= bureaucrat
+NAME			= form
 CC				= clang++
 CFLAGS			= --std=c++98 -Wall -Wextra -Werror
 
 all:			$(NAME)
 
-%.d:			%.cpp
-				$(CC) $(CFLAGS) -MM -MG -MT $(@:%.d=%.o) $< -o $@
-
-%.o: 			%.cpp	%.d
+%.o: 			%.cpp
+				$(CC) $(CFLAGS) -MM -MG -MT $@ $< -o $(@:%.o=%.d)
 				$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJS)

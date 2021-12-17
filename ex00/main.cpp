@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/04 12:38:51 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 18:30:01 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int	main()
 {
-	Bureaucrat a("Hermes Conrad", 3);
-	Bureaucrat b("Morgan Proctor", 148);
+	Bureaucrat hermes("Hermes Conrad", 3);
+	Bureaucrat morgan("Morgan Proctor", 148);
 
-	std::cout << a << std::endl;
-	a.promote();
-	a.promote();
-	a.promote();
-	std::cout << a << std::endl;
-	a.promote();
-	a.promote();
-	a.promote();
-	std::cout << a << std::endl;
+	std::cout << hermes << std::endl;
+	hermes.promote();
+	hermes.promote();
+	hermes.promote();
+	std::cout << hermes << std::endl;
+	hermes.promote();
+	hermes.promote();
+	hermes.promote();
+	std::cout << hermes << std::endl;
 
 
-	std::cout << b << std::endl;
-	b.demote();
-	b.demote();
-	b.demote();
-	std::cout << b << std::endl;
-	b.demote();
-	b.demote();
-	b.demote();
+	std::cout << morgan << std::endl;
+	morgan.demote();
+	morgan.demote();
+	morgan.demote();
+	std::cout << morgan << std::endl;
+	morgan.demote();
+	morgan.demote();
+	morgan.demote();
 }
 
 

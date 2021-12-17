@@ -5,6 +5,8 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 
@@ -22,6 +24,18 @@ class Form
 		int			getExecGrade() const;
 		void		beSigned(Bureaucrat & bureaucrat);
 
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
 	private:
 
 		bool				_signed;
@@ -29,17 +43,6 @@ class Form
 		const int			_sign_grade;
 		const int			_exec_grade;
 
-	class GradeTooHighException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw();
-	};
-
-	class GradeTooLowException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw();
-	};
 
 };
 

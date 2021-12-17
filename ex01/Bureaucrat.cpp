@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:15:37 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/04 12:39:47 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 19:01:14 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,25 @@ void	Bureaucrat::demote()
 	catch (Bureaucrat::GradeTooLowException e)
 	{
 		std::cout << e.what() << std::endl;
+		return;
+	}
+}
+
+void	Bureaucrat::signForm( Form & form)
+{
+	if (form.getSigned())
+	{
+		std::cout << "Form " << form.getName() << " is already signed" << std::endl;
+		return;
+	}
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signs " << form.getName() << "." << std::endl;
+	}
+	catch(Form::GradeTooLowException & e)
+	{
+		std::cout << getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
 		return;
 	}
 }

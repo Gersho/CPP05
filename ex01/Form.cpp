@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Form::Form() : _name("default Form"), _exec_grade(75), _sign_grade(75), _signed(false)
+Form::Form() : _signed(false), _name("default Form"), _sign_grade(75), _exec_grade(75)
 {
 }
 
@@ -79,7 +79,10 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 
 void		Form::beSigned(Bureaucrat & bureaucrat)
 {
-	(void) bureaucrat;
+	if (bureaucrat.getGrade() > getSignGrade())	
+		throw Form::GradeTooLowException();
+	else
+		_signed = true;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/04 13:28:25 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 19:01:52 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,27 @@
 
 int	main()
 {
-	// Bureaucrat a("Hermes Conrad", 37);
-	// Bureaucrat b("Morgan Proctor", 19);
-
-	// std::cout << a << std::endl;
-	// a.promote();
-	// a.promote();
-	// a.promote();
-	// std::cout << a << std::endl;
-	// a.promote();
-	// a.promote();
-	// a.promote();
-	// std::cout << a << std::endl;
-
-
-	// std::cout << b << std::endl;
-	// b.demote();
-	// b.demote();
-	// b.demote();
-	// std::cout << b << std::endl;
-	// b.demote();
-	// b.demote();
-	// b.demote();
-
+	Bureaucrat hermes("Hermes Conrad", 37);
+	Bureaucrat morgan("Morgan Proctor", 19);
 	Form a;
 	Form b("allo", 155, 10);
-	std::cout << "coucou " << std::endl;
+	Form c("a l'huile", -5 , -12);
+	Form planet_contract("Planet Express Contract", 50, 50);
+	Form accident_permit("falling accident permit", 30, 30);
+
+	std::cout << std::endl;
+	std::cout << planet_contract << std::endl;
+	hermes.signForm(planet_contract);
+	std::cout << planet_contract << std::endl;
+	hermes.signForm(planet_contract);
+
+	std::cout << "##################" << std::endl;
+
+	std::cout << accident_permit << std::endl;
+	hermes.signForm(accident_permit);
+	std::cout << accident_permit << std::endl;
+	morgan.signForm(accident_permit);
+	std::cout << accident_permit << std::endl;
 }
 
 
@@ -60,6 +55,11 @@ Form::GradeTooLowException.
 
 Same as before, make getters for all attributes, and an overload of the <<operator
 to ostream that completely describes the state of the form.
+
+
+
+
+
 
 You will also add a beSigned function that takes a Bureaucrat, and makes the form
 signed if the bureaucrat’s grade is high enough. Always remember, grade 1 is better than
