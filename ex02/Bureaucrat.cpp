@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:15:37 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 13:04:16 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 15:43:18 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,22 @@ void	Bureaucrat::signForm( AForm & form)
 	catch(AForm::GradeTooLowException & e)
 	{
 		std::cout << getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+		return;
+	}
+}
+
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.exec_paperwork_check(*this);
+		form.execute(*this);
+		std::cout << getName() << " executes " << form.getName() << "." << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << getName() << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
 		return;
 	}
 }

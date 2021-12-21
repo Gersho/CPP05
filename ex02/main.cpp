@@ -6,19 +6,24 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 13:07:19 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 15:44:12 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main()
 {
-	Bureaucrat hermes("Hermes Conrad", 37);
+	Bureaucrat hermes("Hermes Conrad", 148);
 	Bureaucrat morgan("Morgan Proctor", 19);
-	//AForm a; //impossible
-
+	ShrubberyCreationForm a("home");
+	//AForm z; //impossible because abstract
+	hermes.signForm(a);
+	hermes.executeForm(a);
+	morgan.signForm(a);
+	hermes.executeForm(a);
+	morgan.executeForm(a);
 }
 
 
@@ -45,11 +50,17 @@ Remember the form’s attributes need to remain private, and in the base class.
 Now you need to add a method execute(Bureaucrat const & executor) const to
 the base form, and implement a method executing the form’s action in all the concrete
 forms.
-You have to check that the form is signed, and that the bureaucrat attempting to
-execute the form has a high enough grade, else you will throw an appropriate exception.
+
+
+You have to 
+check that the form is signed, and that 
+the bureaucrat attempting to execute the form has a high enough grade,
+else you will throw an appropriate exception.
 Whether you want to make these checks in every concrete class or make the check-in the
 base class then calling another method to execute the action is up to you, but one way
 is prettier than the other one.
+
+
 In any event, the base form must be an abstract class.
 Finish this by adding an executeForm(Form const & form) function to the bureaucrat.
  It must attempt to execute the form, and if it’s a success, print something like

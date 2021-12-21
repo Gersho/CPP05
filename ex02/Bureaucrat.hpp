@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:15:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 13:04:53 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 14:52:26 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Bureaucrat
 		void	signForm( AForm & form);
 		void	promote();
 		void	demote();
+		void	executeForm(AForm const & form) const;
 
 		class GradeTooHighException : public std::exception
 		{

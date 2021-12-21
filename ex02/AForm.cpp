@@ -16,16 +16,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AForm::AForm() : _signed(false), _name("A38 pass"), _sign_grade(1), _exec_grade(1)
+AForm::AForm() :
+	_signed(false), _name("A38 pass"), _sign_grade(1), _exec_grade(1), _target("Asterix")
 {
 }
 
-AForm::AForm( const AForm & src ): _name(src.getName()), _sign_grade(src.getSignGrade()), _exec_grade(src.getExecGrade())
+AForm::AForm( const AForm & src ):
+	_name(src.getName()), _sign_grade(src.getSignGrade()),
+	_exec_grade(src.getExecGrade()), _target(src.getTarget())
 {
 	_signed = getSigned();
 }
 
-AForm::AForm( std::string name, int sign_grade, int exec_grade) : _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
+AForm::AForm( std::string name, int sign_grade, int exec_grade, std::string target) :
+	_name(name), _sign_grade(sign_grade), _exec_grade(exec_grade), _target(target)
 {
 	_signed = false;
 	try 
@@ -74,6 +78,7 @@ AForm &				AForm::operator=( AForm const & rhs )
 std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {
 	o << "Form: " << i.getName() << std::endl
+	<< "target: " << i.getTarget() << std::endl
 	<< "sign grade: " << i.getSignGrade() << std::endl
 	<< "exec grade: " << i.getExecGrade() << std::endl
 	<< "signed: ";
@@ -89,12 +94,20 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void		AForm::beSigned(Bureaucrat & bureaucrat)
+void	AForm::beSigned(Bureaucrat const & bureaucrat)
 {
 	if (bureaucrat.getGrade() > getSignGrade())	
 		throw AForm::GradeTooLowException();
 	else
 		_signed = true;
+}
+
+void	AForm::exec_paperwork_check(Bureaucrat const & bureaucrat) const
+{
+	if (!this->getSigned())
+		throw AForm::FormNotSignedException();
+	if (bureaucrat.getGrade() > this->getExecGrade())
+		throw AForm::GradeTooLowException();
 }
 
 /*
@@ -106,9 +119,20 @@ bool	AForm::getSigned() const
 	return _signed;
 }
 
+
+void	AForm::setSigned(bool s)
+{
+	_signed = s;
+}
+
 std::string	AForm::getName() const
 {
 	return _name;
+}
+
+std::string	AForm::getTarget() const
+{
+	return _target;
 }
 
 int	AForm::getSignGrade() const
@@ -133,6 +157,11 @@ const char * AForm::GradeTooHighException::what() const throw()
 const char * AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+const char * AForm::FormNotSignedException::what() const throw()
+{
+	return ("Form is not signed");
 }
 
 /* ************************************************************************** */
