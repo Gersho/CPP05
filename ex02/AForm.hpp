@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:15:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 13:04:53 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/12/21 12:56:06 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/12/21 12:56:14 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
-# include "AForm.hpp"
+# include "Bureaucrat.hpp"
 
-class AForm;
+class Bureaucrat;
 
-class Bureaucrat
+class AForm
 {
 
 	public:
 
-		Bureaucrat();
-		Bureaucrat( Bureaucrat const & src );
-		Bureaucrat(std::string name, int grade);
-		~Bureaucrat();
+		AForm();
+		AForm( AForm const & src );
+		AForm( std::string name, int sign_grade, int exec_grade);
+		~AForm();
 
-		Bureaucrat &		operator=( Bureaucrat const & rhs );
-		int			getGrade() const;
+		AForm &		operator=( AForm const & rhs );
+		bool		getSigned() const;
 		std::string	getName() const;
-		void	signForm( AForm & form);
-		void	promote();
-		void	demote();
+		int			getSignGrade() const;
+		int			getExecGrade() const;
+		void		beSigned(Bureaucrat & bureaucrat);
 
 		class GradeTooHighException : public std::exception
 		{
@@ -49,12 +49,15 @@ class Bureaucrat
 		};
 
 	private:
-		std::string const	_name;
-		int					_grade;
-	
+
+		bool				_signed;
+		const std::string	_name;
+		const int			_sign_grade;
+		const int			_exec_grade;
+
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i );
+std::ostream &			operator<<( std::ostream & o, AForm const & i );
 
-#endif /* ****************************************************** BUREAUCRAT_H */
+#endif /* ************************************************************ FORM_H */

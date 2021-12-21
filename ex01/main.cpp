@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/17 19:01:52 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 12:30:42 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	main()
 	Bureaucrat hermes("Hermes Conrad", 37);
 	Bureaucrat morgan("Morgan Proctor", 19);
 	Form a;
-	Form b("allo", 155, 10);
-	Form c("a l'huile", -5 , -12);
+	Form b("allo", 155, 10); // Grade is too low
+	Form c("a l'huile", -5 , -12); // Grade is too high
 	Form planet_contract("Planet Express Contract", 50, 50);
 	Form accident_permit("falling accident permit", 30, 30);
 
