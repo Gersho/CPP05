@@ -6,24 +6,41 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:44:12 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 15:58:46 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
-	Bureaucrat hermes("Hermes Conrad", 148);
-	Bureaucrat morgan("Morgan Proctor", 19);
-	ShrubberyCreationForm a("home");
 	//AForm z; //impossible because abstract
+	Bureaucrat hermes("Hermes Conrad", 150);
+	Bureaucrat morgan("Morgan Proctor", 1);
+	ShrubberyCreationForm a("home");
+	RobotomyRequestForm b("people who criticize my code");
+	PresidentialPardonForm c("the person wrote this code for any mistake that may have been made");
+
 	hermes.signForm(a);
 	hermes.executeForm(a);
 	morgan.signForm(a);
 	hermes.executeForm(a);
 	morgan.executeForm(a);
+	std::cout << std::endl;
+	hermes.signForm(b);
+	hermes.executeForm(b);
+	morgan.signForm(b);
+	hermes.executeForm(b);
+	morgan.executeForm(b);
+	std::cout << std::endl;
+	hermes.signForm(c);
+	hermes.executeForm(c);
+	morgan.signForm(c);
+	hermes.executeForm(c);
+	morgan.executeForm(c);
 }
 
 

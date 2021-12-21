@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:15:37 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:43:18 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:00:06 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,8 +170,9 @@ void	Bureaucrat::executeForm(AForm const & form) const
 	try
 	{
 		form.exec_paperwork_check(*this);
-		form.execute(*this);
 		std::cout << getName() << " executes " << form.getName() << "." << std::endl;
+		form.execute(*this);
+		std::cout << getName() << " has executed " << form.getName() << "." << std::endl;
 	}
 	catch (const std::exception& e)
 	{

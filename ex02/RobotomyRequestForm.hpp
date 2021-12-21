@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:46 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 12:40:01 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 15:49:34 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,23 @@
 
 # include <iostream>
 # include <string>
+# include "AForm.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm: public AForm
 {
 
 	public:
 
 		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		~RobotomyRequestForm();
 
+		void	execute(Bureaucrat const & executor) const;
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 	private:
 
 };
-
-//std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i );
 
 #endif /* ********************************************* ROBOTOMYREQUESTFORM_H */

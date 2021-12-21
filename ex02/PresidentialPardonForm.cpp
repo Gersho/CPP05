@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 12:36:33 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 12:36:35 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/12/21 12:36:49 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/12/21 15:57:28 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm(): 
+	AForm("PresidentialPardonForm", 25, 5, "#default#")
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
+PresidentialPardonForm::PresidentialPardonForm(std::string target): 
+	AForm("PresidentialPardonForm", 25, 5, target)
 {
+}
+
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) :
+	AForm(src.getName(), src.getSignGrade(), src.getExecGrade(), src.getTarget())
+{
+	setSigned(src.getSigned());
 }
 
 
@@ -40,25 +48,25 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		AForm::operator=(rhs);
+	}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
+
 
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	(void) executor;
+	std::cout << "TODO calling PresidentialPardonForm::execute" << std::endl;
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

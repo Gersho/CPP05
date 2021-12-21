@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:53 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:27:11 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 15:48:02 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <string>
 # include "AForm.hpp"
 
-
 class ShrubberyCreationForm: public AForm
 {
 
@@ -27,7 +26,6 @@ class ShrubberyCreationForm: public AForm
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
-
 
 		void	execute(Bureaucrat const & executor) const;
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
