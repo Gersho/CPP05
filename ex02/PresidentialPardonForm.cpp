@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:49 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:57:28 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:08:18 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardo
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	(void) executor;
-	std::cout << "TODO calling PresidentialPardonForm::execute" << std::endl;
+	std::cout <<  getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

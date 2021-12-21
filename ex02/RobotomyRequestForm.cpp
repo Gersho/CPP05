@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:49 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:56:55 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:15:16 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,14 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	(void) executor;
-	std::cout << "TODO calling RobotomyRequestForm::execute" << std::endl;
+	srand(std::time(NULL));
+	int num = rand() % 2;
+
+	std::cout << "*drill drill brrzzz drill drill*" << std::endl;
+	if (num)
+		std::cout << getTarget() <<" has been robotomized successfully." << std::endl;
+	else
+		std::cout << getTarget() <<" robotomy has failed." << std::endl;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

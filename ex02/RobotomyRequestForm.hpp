@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:46 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:49:34 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:41:36 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <ctime>
+# include <cstdlib>
 # include "AForm.hpp"
 
 class RobotomyRequestForm: public AForm

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:58:46 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:44:05 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main()
 	Bureaucrat hermes("Hermes Conrad", 150);
 	Bureaucrat morgan("Morgan Proctor", 1);
 	ShrubberyCreationForm a("home");
-	RobotomyRequestForm b("people who criticize my code");
-	PresidentialPardonForm c("the person wrote this code for any mistake that may have been made");
+	RobotomyRequestForm b("someone");
+	PresidentialPardonForm c("For any mistake that may have been made the person wrote this code");
 
 	hermes.signForm(a);
 	hermes.executeForm(a);

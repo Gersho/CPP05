@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:53 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:48:02 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:23:40 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "AForm.hpp"
 
 class ShrubberyCreationForm: public AForm

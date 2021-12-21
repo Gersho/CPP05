@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:36:49 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 15:35:26 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 16:52:10 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,28 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	(void) executor;
-	std::cout << "TODO calling ShrubberyCreationForm::execute" << std::endl;
+
+   	std::ofstream out;
+
+	out.open((getTarget() + "_shrubbery").c_str());
+	if (!out)
+	{
+		std::cerr << "Could not open output file." << std::endl;
+	}
+ 
+	out	<< "         &&& &&  & &&"				<< std::endl
+		<< "     && &+/&+|& ()|/ @, &&"			<< std::endl
+		<< "     &+/(/&/&||/& /_/)_&/_&"		<< std::endl
+		<< "  &() &+/&|()|/&+/ '%' & ()"		<< std::endl
+		<< " &_+_&&_+ |& |&&/&__%_/_& &&"		<< std::endl
+		<< "&&   && & &| &| /& & % ()& /&&"		<< std::endl
+		<< "()&_---()&+&+|&&-&&--%---()~"		<< std::endl
+		<< "            |||"					<< std::endl
+		<< "            |||"					<< std::endl
+		<< "            |||"					<< std::endl
+		<< "            |||"					<< std::endl;
+
+	out.close();
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
