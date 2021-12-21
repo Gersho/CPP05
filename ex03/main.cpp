@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:11:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 18:32:21 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 18:49:50 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	main()
 	if (!a || !b || !c)
 		return (-1);
 
-	// ShrubberyCreationForm a("home");
-	// RobotomyRequestForm b("someone");
-	// PresidentialPardonForm c("For any mistake that may have been made the person wrote this code");
-
+	std::cout << std::endl;
 	hermes.signForm(*a);
 	hermes.executeForm(*a);
 	morgan.signForm(*a);

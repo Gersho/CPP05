@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:31:37 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/21 18:37:36 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 18:46:42 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ class Intern
 		Intern( Intern const & src );
 		~Intern();
 
-		AForm * makeForm(std::string name, std::string target);
+		AForm * makeForm(std::string const name, std::string const target);
 		Intern &		operator=( Intern const & rhs );
 
 	private:
-		AForm * make_ShrubberyCreationForm(std::string const & target);
-		AForm * make_RobotomyRequestForm(std::string const & target);
-		AForm * make_PresidentialPardonForm(std::string const & target);
+		static AForm * make_ShrubberyCreationForm(std::string const & target);
+		static AForm * make_RobotomyRequestForm(std::string const & target);
+		static AForm * make_PresidentialPardonForm(std::string const & target);
 };
 
 #endif /* ********************************************************** INTERN_H */
